@@ -29,8 +29,8 @@
 					<!-- Logo -->
 						<div id="logo">
 							<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
-							<h1 id="title">Jane Doe</h1>
-							<span class="byline">Hyperspace Engineer</span>
+							<h1 id="title">{{ Auth::user()->full_name; }}</h1>
+							<span class="byline"><a href="/logout"><span class="icon icon-signout">Salir</span></a></span>
 						</div>
 
 					<!-- Nav -->
@@ -40,6 +40,8 @@
 								<li><a href="/listas"><span class="icon icon-th-list">Listas</span></a></li>
 								<li><a href="/listas"><span class="icon icon-user">Listas</span></a></li>
 								<li><a href="/mensajes"><span class="icon icon-envelope">Mensajes</span></a></li>
+
+								<li></li>
 							</ul>
 						</nav>
 						

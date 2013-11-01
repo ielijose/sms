@@ -46,15 +46,15 @@
                             <h2>Iniciar Sesión</h2>
                         </header>
 
-                        <form method="post" action="#">
+                        <form method="post" action="/login">
                             <div class="row half">
-                                <div class="6u"><input type="text" class="text" name="name" placeholder="Name" /></div>
                                 <div class="6u"><input type="text" class="text" name="email" placeholder="Email" /></div>
+                                <div class="6u"><input type="password" class="text" name="password" placeholder="Contraseña" /></div>
                             </div>
 
                             <div class="row">
                                 <div class="12u">
-                                    <a href="#" class="button submit">Entrar</a>
+                                    <input type="submit" class="button submit" value="Entrar"/>
                                 </div>
                             </div>
                         </form>
