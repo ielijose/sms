@@ -1,0 +1,14 @@
+{
+	"folders":
+	[	
+		{
+			"path": "/C/wamp/www/sms/",
+			"name": "API"
+		},
+		{
+			"path": "/C/wamp/www/sms",
+			"name": "sms"
+		}		
+		
+	]
+}
