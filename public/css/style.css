@@ -951,7 +951,7 @@
 			position: relative;
 			color: #fff;
 			font-weight: 600;
-			font-size: 1em;
+			font-size: .8em;
 			line-height: 1em;
 		}
 	
@@ -1111,4 +1111,8 @@
 
 #sms-list p{
 	text-align: justify;
+}
+
+section#login{
+	padding-top: 1em;
 }

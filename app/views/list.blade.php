@@ -2,8 +2,6 @@
 
 @section('sidebar')
     @parent
-
-    <p>This is appended to the master sidebar.</p>
 @stop
 
 @section('content')
@@ -14,24 +12,25 @@
 	<div class="container">
 
 		<header>
-			<h2>Listas de contactos</h2>
+			<h2>{{ $list->name }}</h2>
 		</header>
 		
 		<div class="row">
-			@foreach ($lists as $list)
+			@foreach ($contacts as $contact)
 
 			<div class="4u" style="margin-top: 10px">
 				<article class="item">
 					<header>
-						<h2>{{ $list->name }}</h2>
+						<h2>{{ $contact->name }}</h2>
+						<p> {{ $contact->phone }} </p>
 						<hr>
-						<a href="/mensajes/{{ $list->id }}" title="Enviar Mensaje"> 
-							<span class="icon icon-envelope"></span> 
+						
+						<a href="/contact/{{ $contact->id }}/delete" title="Eliminar"> 
+							<span class="icon icon-trash"></span> 
 						</a>
-						<a href="/lista/{{ $list->id }}" title="Ver Contactos"> 
+						<a href="/lista/{{ $contact->id }}" title="Ver Contactos"> 
 							<span class="icon icon-user"></span> 
 						</a>
-						
 					</header>
 				</article>								
 			</div>	
@@ -42,7 +41,7 @@
 
 			<div class="12u" style="margin-top: 10px">
 				<header>
-					<h3>Nueva Lista</h3>
+					<h3>Nuevo Contacto</h3>
 				</header>
 				<article class="item">						
 						{{ Form::open(array('url' => 'listas', 'method' => 'post')) }}

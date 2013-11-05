@@ -1,4 +1,37 @@
 <?php
+
+Route::get('/', ['before' => 'guest', function(){
+    return View::make('login');
+}]);
+
+Route::get('/login', ['before' => 'guest', function(){
+    return View::make('login');
+}]);
+
+Route::post('/login', ['uses' => 'AuthController@doLogin', 'before' => 'guest']);
+Route::get('/logout', ['uses' => 'AuthController@doLogout', 'before' => 'auth']);
+
+
+/* APP */
+
+Route::get('/app', ['before' => 'auth', function(){
+    return View::make('home');
+}]);
+
+Route::get('/listas', ['uses' => 'ListsController@index', 'before' => 'auth']);
+Route::post('/listas', ['uses' => 'ListsController@post_list', 'before' => 'auth']);
+
+Route::get('/lista/{id}', ['uses' => 'ListsController@get_list', 'before' => 'auth']);
+
+Route::get('/contact/{id}/delete', ['uses' => 'ContactsController@delete', 'before' => 'auth']);
+
+
+
+/*
+Route::get('/listas', ['before' => 'auth', function(){
+    return View::make('lists');
+}]);
+
 /*
 Route::get('/', function()
 {
@@ -24,19 +57,3 @@ Route::get('/login', function()
 
 /* */
 
-
-//Pagina principal donde está el formulario de identificación
-Route::get('/', ['before' => 'auth', function(){
-    return View::make('home');
-}]);
-Route::get('/login', ['before' => 'guest', function(){
-    return View::make('login');
-}]);
-//Página oculta donde sólo puede ingresar un usuario identificado
-Route::get('/home', ['before' => 'auth', function(){
-    return View::make('home');
-}]);
-//Procesa el formulario e identifica al usuario
-Route::post('/login', ['uses' => 'AuthController@doLogin', 'before' => 'guest']);
-//Desconecta al usuario
-Route::get('/logout', ['uses' => 'AuthController@doLogout', 'before' => 'auth']);

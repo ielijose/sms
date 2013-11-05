@@ -11,6 +11,11 @@ class UserTableSeeder extends Seeder
 			'full_name' => 'Eli Jose Carrasquero',
 			'password' => Hash::make('1234'),
 		));
+		User::create(array(
+			'email'     => 'pablo@gmail.com',
+			'full_name' => 'Pablo Miguel Huerta',
+			'password' => Hash::make('1234'),
+		));
 	}
 
 }

@@ -18,7 +18,7 @@ class AuthController extends BaseController {
         {
             // Aquí también pueden devolver una llamada a otro controlador o
             // devolver una vista
-            return Redirect::to('/home');
+            return Redirect::to('/app');
         }
  
         // La autenticación ha fallado re-direccionamos
