@@ -18,24 +18,30 @@
 		</header>
 		
 		<div class="row">
-			@foreach ($lists as $list)
+			@if(count($lists) > 0)	
 
-			<div class="4u" style="margin-top: 10px">
-				<article class="item">
-					<header>
-						<h2>{{ $list->name }}</h2>
-						<hr>
-						<a href="/mensajes/{{ $list->id }}" title="Enviar Mensaje"> 
-							<span class="icon icon-envelope"></span> 
-						</a>
-						<a href="/lista/{{ $list->id }}" title="Ver Contactos"> 
-							<span class="icon icon-user"></span> 
-						</a>
-						
-					</header>
-				</article>								
-			</div>	
-			@endforeach
+				@foreach ($lists as $list)
+
+				<div class="4u" style="margin-top: 10px">
+					<article class="item">
+						<header>
+							<h2>{{ $list->name }}</h2>
+							<hr>
+							<a href="/mensajes/{{ $list->id }}" title="Enviar Mensaje"> 
+								<span class="icon icon-envelope"></span> 
+							</a>
+							<a href="/lista/{{ $list->id }}" title="Ver Contactos"> 
+								<span class="icon icon-user"></span> 
+							</a>
+							
+						</header>
+					</article>								
+				</div>	
+				@endforeach
+
+			@else
+				<h3>No hay listas de contactos.</h3>
+			@endif
 		</div>
 		<hr>
 		<div class="row">

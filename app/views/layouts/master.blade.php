@@ -38,8 +38,8 @@
 							<ul>
 								<li><a href="/" ><span class="icon icon-home">Inicio</span></a></li>
 								<li><a href="/listas"><span class="icon icon-th-list">Listas</span></a></li>
-								<li><a href="/listas"><span class="icon icon-user">Listas</span></a></li>
 								<li><a href="/mensajes"><span class="icon icon-envelope">Mensajes</span></a></li>
+								<li><a href="/perfil"><span class="icon icon-user">Mi Cuenta</span></a></li>
 
 								<li></li>
 							</ul>

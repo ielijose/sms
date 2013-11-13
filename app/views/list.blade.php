@@ -16,25 +16,29 @@
 		</header>
 		
 		<div class="row">
-			@foreach ($contacts as $contact)
+			@if(count($contacts) > 0)
+				@foreach ($contacts as $contact)
 
-			<div class="4u" style="margin-top: 10px">
-				<article class="item">
-					<header>
-						<h2>{{ $contact->name }}</h2>
-						<p> {{ $contact->phone }} </p>
-						<hr>
-						
-						<a href="/contact/{{ $contact->id }}/delete" title="Eliminar"> 
-							<span class="icon icon-trash"></span> 
-						</a>
-						<a href="/lista/{{ $contact->id }}" title="Ver Contactos"> 
-							<span class="icon icon-user"></span> 
-						</a>
-					</header>
-				</article>								
-			</div>	
-			@endforeach
+				<div class="4u" style="margin-top: 10px">
+					<article class="item">
+						<header>
+							<h2>{{ $contact->name }}</h2>
+							<p> {{ $contact->phone }} </p>
+							<hr>
+							
+							<a href="/contact/{{ $contact->id }}/delete" title="Eliminar"> 
+								<span class="icon icon-trash"></span> 
+							</a>
+							<a href="/contact/{{ $contact->id }}/edit" title="Editar"> 
+								<span class="icon icon-edit"></span> 
+							</a>
+						</header>
+					</article>								
+				</div>	
+				@endforeach
+			@else
+				<h3>No hay contactos en esta lista.</h3>
+			@endif
 		</div>
 		<hr>
 		<div class="row">
@@ -44,11 +48,22 @@
 					<h3>Nuevo Contacto</h3>
 				</header>
 				<article class="item">						
-						{{ Form::open(array('url' => 'listas', 'method' => 'post')) }}
-    						{{ Form::text('name', '', array('class' => 'text', 'placeholder' => 'Lista #2') ); }}
-    						{{ $errors->first('name') }}
+						{{ Form::open(array('url' => 'contact/'.$list->id , 'method' => 'post')) }}
+
+						<div class="row half">
+							<div class="6u">
+								{{ Form::text('name', '', array('class' => 'text', 'placeholder' => 'Fulanito de tal') ); }}
+    							{{ $errors->first('name') }}
+							</div>
+							<div class="6u">
+								{{ Form::text('phone', '', array('class' => 'text', 'placeholder' => '04246029989') ); }}
+    							{{ $errors->first('phone') }}
+							</div>
+						</div>
+
+    						
     						<br>
-    						{{ Form::submit('Guardar', array('class' => 'button')); }}
+    						{{ Form::submit('Agregar', array('class' => 'button')); }}
 						{{ Form::close() }}		
 				</article>								
 			</div>	

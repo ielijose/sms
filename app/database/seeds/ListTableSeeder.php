@@ -7,9 +7,9 @@ class ListTableSeeder extends Seeder {
     	DB::table('lists')->delete();
     	
         $lists = [
-            ['name' => 'Amigos', 'user_id' => 1],
-            ['name' => 'Compañeros', 'user_id' => 1],
-            ['name' => 'Familia', 'user_id' => 1],
+            ['id' => 1, 'name' => 'Amigos', 'user_id' => 1],
+            ['id' => 2, 'name' => 'Compañeros', 'user_id' => 1],
+            ['id' => 3, 'name' => 'Familia', 'user_id' => 1],
         ];
  
         DB::table('lists')->insert($lists);
