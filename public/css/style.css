@@ -1116,3 +1116,10 @@
 section#login{
 	padding-top: 1em;
 }
+
+.success{
+	color : green;
+}
+.error{
+	color: red;
+}

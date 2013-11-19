@@ -5,7 +5,7 @@ class ListsController extends BaseController {
     
     public function index()
     {   
-        $lists = DB::table('lists')->where('user_id', '=', Auth::user()->id )->get();
+        $lists = DB::table('lists')->where('user_id', '=', Auth::user()->id )->get();        
         return View::make('lists', array('lists' => $lists));
     }   
 

@@ -13,6 +13,9 @@
 
 		<header>
 			<h2>{{ $list->name }}</h2>
+			<a href="/mensajes/{{ $list->id }}" title="Enviar Mensaje"> 
+				<span class="icon icon-envelope"></span> 
+			</a>
 		</header>
 		
 		<div class="row">

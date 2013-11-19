@@ -1,32 +1,41 @@
 @extends('layouts.master')
 
+@section('sidebar')
+    @parent
+@stop
+
 @section('content')
+    
+
 <!-- Contact -->
 <section id="contact" class="four">
 	<div class="container">
 
 		<header>
-			<h2>Mensajes</h2>
+			<h2>Enviar Mensajes</h2>
+			<h5> {{ $list->name }} </h5>
 		</header>
 	
 
-		<form method="post" action="#">
-			<div class="row half">
-				<div class="6u"><input type="text" class="text" name="name" placeholder="Name" /></div>
-				<div class="6u"><input type="text" class="text" name="email" placeholder="Email" /></div>
-			</div>
+		<form method="post" action="/mensajes/{{ $list->id }}">			
 			<div class="row half">
 				<div class="12u">
-					<textarea name="message" placeholder="Message"></textarea>
+					{{ Form::textarea('message', '', array('class' => 'text', 'placeholder' => 'Escribe tu mensaje aqui...') ); }}
+    				{{ $errors->first('message') }}
 				</div>
 			</div>
 			<div class="row">
 				<div class="12u">
-					<a href="#" class="button submit">Send Message</a>
+					<a href="#" class="button submit">Enviar</a>
 				</div>
 			</div>
 		</form>
 
 	</div>
+
+	
 </section>
+
 @stop
+
+

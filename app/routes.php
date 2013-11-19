@@ -28,3 +28,8 @@ Route::post('/contact/{id}', ['uses' => 'ContactsController@post_add', 'before' 
 Route::get('/contact/{id}/edit', ['uses' => 'ContactsController@get_edit', 'before' => 'auth']);
 Route::get('/contact/{id}/json', ['uses' => 'ContactsController@get_json', 'before' => 'auth']);
 Route::put('/contact/{id}', ['uses' => 'ContactsController@put_edit', 'before' => 'auth']);
+
+/* MENSAJES */
+Route::get('/mensajes/{id}', ['uses' => 'MessagesController@get_list', 'before' => 'auth']);
+Route::post('/mensajes/{id}', ['uses' => 'MessagesController@send_message', 'before' => 'auth']);
+Route::get('/send', ['uses' => 'MessagesController@send', 'before' => 'auth']);
